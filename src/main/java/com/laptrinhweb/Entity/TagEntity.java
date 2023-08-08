@@ -18,7 +18,5 @@ public class TagEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String tagName;
-    @ManyToMany
-    List<BlogEntity> blogEntities;
+    private String tagName;it a
 }

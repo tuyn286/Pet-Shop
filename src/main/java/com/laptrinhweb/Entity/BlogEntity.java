@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.ZonedDateTime;
 import java.util.List;
-import com.laptrinhweb.Entity.*;
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor

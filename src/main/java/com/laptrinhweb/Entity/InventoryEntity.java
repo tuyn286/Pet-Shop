@@ -11,10 +11,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class InventoryEntity {
-    @Id
-    @OneToOne
-    @JoinColumn(name = "productId")
+    @EmbeddedId
+    private InventoryId id;
+    @ManyToOne
+    @MapsId("productId")
+    @JoinColumn(name = "product_id")
     private ProductEntity product;
     private int quantity;
     private String location;
+
 }

@@ -14,12 +14,13 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Builder
 @Data
-@Table(name = "tbCoupon")
-public class CouponEntity {
+@Table(name = "tbTemporaryCustomer")
+public class TemporaryCustomerEntity {
     @Id
     private String id;
-    private String code;
-    private Double discount;
+    private String firstname;
+    private String lastname;
+    private String email;
 
 
 }

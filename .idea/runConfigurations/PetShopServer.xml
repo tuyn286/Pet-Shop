@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PetShopServer" type="com.poratu.idea.plugins.tomcat">
+    <output_file is_save="true" />
+    <log_file alias="Tomcat Catalina Log" path="$USER_HOME$/.SmartTomcat/Pet-Shop/PetShop/logs/catalina.*" />
+    <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+    <predefined_log_file enabled="true" id="Tomcat Access Log" />
+    <predefined_log_file id="Tomcat Manager Log" />
+    <predefined_log_file id="Tomcat Host Manager Log" />
+    <option name="contextPath" value="/" />
+    <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+    <option name="envOptions">
+      <map />
+    </option>
+    <option name="extraClassPath" value="" />
+    <option name="tomcatInfo">
+      <TomcatInfo>
+        <option name="name" value="Apache Tomcat/9.0.71" />
+        <option name="path" value="$PROJECT_DIR$/../../../../TomcatRunning/apache-tomcat-9.0.71" />
+        <option name="version" value="9.0.71.0" />
+      </TomcatInfo>
+    </option>
+    <option name="vmOptions" value="" />
+    <module name="PetShop" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

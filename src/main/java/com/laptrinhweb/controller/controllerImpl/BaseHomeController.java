@@ -1,4 +1,4 @@
-package com.laptrinhweb.controllerImpl;
+package com.laptrinhweb.controller.controllerImpl;
 
 import org.springframework.web.servlet.ModelAndView;
 

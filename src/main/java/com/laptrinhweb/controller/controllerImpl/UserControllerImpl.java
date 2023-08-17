@@ -1,4 +1,4 @@
-package com.laptrinhweb.controllerImpl;
+package com.laptrinhweb.controller.controllerImpl;
 
 import com.laptrinhweb.controller.UserController;
 import org.springframework.web.bind.annotation.RestController;

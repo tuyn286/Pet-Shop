@@ -1,23 +1,19 @@
-package com.laptrinhweb.controllerImpl;
+package com.laptrinhweb.controller.controllerImpl;
 
-import com.laptrinhweb.auth.AuthenticationResponse;
+import com.laptrinhweb.Dto.auth.AuthenticationResponse;
+import com.laptrinhweb.controller.AuthenticationController;
 import com.laptrinhweb.service.AuthenticationService;
-import com.laptrinhweb.auth.AuthenticationRequest;
-import com.laptrinhweb.controller.HomeController;
+import com.laptrinhweb.Dto.auth.AuthenticationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.net.http.HttpResponse;
-import java.sql.Date;
-import java.time.LocalDate;
 
 @RestController
-public class HomeControllerImpl extends BaseHomeController implements HomeController {
+public class AuthenticationControllerImpl extends BaseHomeController implements AuthenticationController {
     @Autowired
     private AuthenticationService authenticationService;
     @Override

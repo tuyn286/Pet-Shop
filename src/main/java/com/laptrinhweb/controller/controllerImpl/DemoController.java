@@ -1,4 +1,4 @@
-package com.laptrinhweb.controllerImpl;
+package com.laptrinhweb.controller.controllerImpl;
 
 import com.laptrinhweb.entity.Role;
 import com.laptrinhweb.entity.UserEntity;

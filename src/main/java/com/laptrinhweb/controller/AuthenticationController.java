@@ -1,16 +1,13 @@
 package com.laptrinhweb.controller;
 
-import com.laptrinhweb.auth.AuthenticationRequest;
-import com.laptrinhweb.auth.AuthenticationResponse;
-import org.springframework.http.ResponseEntity;
+import com.laptrinhweb.Dto.auth.AuthenticationRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
-import java.net.http.HttpResponse;
 
 @RequestMapping("api/v1/auth")
-public interface HomeController {
+    public interface AuthenticationController {
     @RequestMapping({"/",""})
     public ModelAndView welcomePage();
     @RequestMapping("/login-page")

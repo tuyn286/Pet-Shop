@@ -1,8 +1,8 @@
 package com.laptrinhweb.controllerImpl;
 
-import com.laptrinhweb.auth.AuthenticationResponse;
+import com.laptrinhweb.Dto.auth.AuthenticationRequest;
 import com.laptrinhweb.service.AuthenticationService;
-import com.laptrinhweb.auth.AuthenticationRequest;
+import com.laptrinhweb.Dto.auth.AuthenticationResponse;
 import com.laptrinhweb.controller.HomeController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

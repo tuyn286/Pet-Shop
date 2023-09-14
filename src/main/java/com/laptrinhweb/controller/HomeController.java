@@ -1,7 +1,7 @@
 package com.laptrinhweb.controller;
 
-import com.laptrinhweb.auth.AuthenticationRequest;
-import com.laptrinhweb.auth.AuthenticationResponse;
+import com.laptrinhweb.Dto.auth.AuthenticationResponse;
+import com.laptrinhweb.Dto.auth.AuthenticationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;

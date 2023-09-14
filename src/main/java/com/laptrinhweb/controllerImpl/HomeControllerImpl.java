@@ -44,7 +44,7 @@ public class HomeControllerImpl extends BaseHomeController implements HomeContro
         // Create a new HTTP-only cookie containing the JWT
         Cookie jwtCookie = new Cookie("jwtCookie", "Bearer"+authenticationResponse.getToken());
         jwtCookie.setHttpOnly(true);
-        jwtCookie.setMaxAge(60);
+        jwtCookie.setMaxAge(60*50);
         jwtCookie.setPath("/"); // Set the cookie path as needed
 
         // Add the cookie to the response

@@ -43,19 +43,25 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer")) {
             try {
-                String token = authorizationHeader.substring("Bearer".length());
+                String token = authorizationHeader.substring(6);
                 Algorithm algorithm = Algorithm.HMAC256(Secret_key.getBytes());
                 JWTVerifier verifier = JWT.require(algorithm).build();
                 DecodedJWT decodedJWT = verifier.verify(token);
                 String username = decodedJWT.getSubject();
                 String role = decodedJWT.getClaim("role").asString();
                 Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-                authorities.add(new SimpleGrantedAuthority(role));
-
-                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, null, authorities);
-                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                //auto them [] nen phai cat chuoi
+                authorities.add(new SimpleGrantedAuthority(role.substring(1,role.length()-1)));
+                //in ra
+                System.out.println(token);
+                System.out.println(authorities);
+                if(SecurityContextHolder.getContext().getAuthentication()==null) {
+                    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, null, authorities);
+                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                }
                 filterChain.doFilter(request, response);
             } catch (Exception exception) {
+                exception.printStackTrace();
                 response.setHeader("error", exception.getMessage());
                 response.setStatus(FORBIDDEN.value());
                 Map<String, String> error = new HashMap<>();

@@ -23,7 +23,7 @@ public class DemoController {
     @GetMapping("/add-user")
     public ResponseEntity<String> addUser(){
 //        UserEntity user1 = new UserEntity(UUID.randomUUID().toString(),"tuyen","hoang","admin@gmai","$2a$12$QgXEzbrHVLNbs/31GKk0Pu5Gl.ry8WLSOdGZCjo6PzbUSFPo/DR.C","no","0123", Role.ROLE_ADMIN);
-        UserEntity user2 = new UserEntity(UUID.randomUUID().toString(),"tuyen","hoang","user@gmai","$2a$12$QgXEzbrHVLNbs/31GKk0Pu5Gl.ry8WLSOdGZCjo6PzbUSFPo/DR.C","no","0123", Role.ROLE_USER);
+        UserEntity user2 = new UserEntity(UUID.randomUUID().toString(),"tuyen","hoang","user@gmai","$2a$12$QgXEzbrHVLNbs/31GKk0Pu5Gl.ry8WLSOdGZCjo6PzbUSFPo/DR.C","no","0123", Role.USER);
         userRepo.save(user2);
 //        userRepo.save(user1);
         return ResponseEntity.ok("Success! ok nha");

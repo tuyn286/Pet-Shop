@@ -4,8 +4,8 @@ import com.laptrinhweb.repository.UserRepo;
 import com.laptrinhweb.security.CustomUserDetails;
 import com.laptrinhweb.Dto.auth.AuthenticationRequest;
 import com.laptrinhweb.Dto.auth.AuthenticationResponse;
-import com.laptrinhweb.auth.AuthenticationRequest;
-import com.laptrinhweb.auth.AuthenticationResponse;
+import com.laptrinhweb.Dto.auth.AuthenticationResponse;
+import com.laptrinhweb.Dto.auth.AuthenticationRequest;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

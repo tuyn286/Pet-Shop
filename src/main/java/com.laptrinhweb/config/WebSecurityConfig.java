@@ -33,7 +33,8 @@ public class WebSecurityConfig{
                 .formLogin().loginPage("/api/v1/auth/login-page")
                 .defaultSuccessUrl("/api/v1/auth")
                 .and()
-                .authenticationProvider(authenticationProvider)// khong can.
+
+                .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }

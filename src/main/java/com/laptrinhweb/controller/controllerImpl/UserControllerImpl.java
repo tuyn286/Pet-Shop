@@ -1,10 +1,22 @@
 package com.laptrinhweb.controller.controllerImpl;
 
 import com.laptrinhweb.controller.UserController;
+import com.laptrinhweb.entity.UserEntity;
+import com.laptrinhweb.repository.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+
 @RestController
 public class UserControllerImpl extends BaseHomeController implements UserController {
+    @Autowired
+    private RedisTemplate template;
+
+    @Autowired
+    private UserRepo userRepo;
     @Override
     public ModelAndView home() {
         modelAndView.setViewName("/user/index");

@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Welcome Admin</h1>
+    <c:forEach items="users" var="user">
+        <p>${user.lastname}</p>
+    </c:forEach>
     <a href="<c:url value='/demo/login-success'/>">Login Success</a>
 </body>
 </html>

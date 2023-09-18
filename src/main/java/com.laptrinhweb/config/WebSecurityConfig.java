@@ -28,15 +28,13 @@ public class WebSecurityConfig{
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(STATELESS);
         http.authorizeRequests()
-                .antMatchers("/api/v1/auth/**").permitAll()
-                .antMatchers("/guest/**").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
                 .and()
-                .formLogin().loginPage("/api/v1/auth/login-page")
-                .defaultSuccessUrl("/api/v1/auth")
+                .formLogin().loginPage("/auth/login-page")
+                .defaultSuccessUrl("/")
                 .and()
-
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();

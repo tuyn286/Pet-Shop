@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 
-@RequestMapping("api/v1/auth")
+@RequestMapping("/auth")
     public interface AuthenticationController {
     @RequestMapping({"/",""})
     public ModelAndView welcomePage();

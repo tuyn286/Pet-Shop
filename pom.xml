@@ -311,7 +311,7 @@
       </plugins>
       <resources>
           <resource>
-              <directory>src/main/resource</directory>
+              <directory>src/main/resources</directory>
               <filtering>true</filtering>
           </resource>
           <resource>

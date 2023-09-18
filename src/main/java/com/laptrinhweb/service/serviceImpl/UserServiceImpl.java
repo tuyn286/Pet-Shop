@@ -6,9 +6,10 @@ import com.laptrinhweb.service.RedisService;
 import com.laptrinhweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo repo;

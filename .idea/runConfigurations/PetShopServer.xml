@@ -12,10 +12,11 @@
       <map />
     </option>
     <option name="extraClassPath" value="" />
+    <option name="port" value="1304" />
     <option name="tomcatInfo">
       <TomcatInfo>
         <option name="name" value="Apache Tomcat/9.0.71" />
-        <option name="path" value="$PROJECT_DIR$/../../../../TomcatRunning/apache-tomcat-9.0.71" />
+        <option name="path" value="$PROJECT_DIR$/../../../TomcatRunning/apache-tomcat-9.0.71" />
         <option name="version" value="9.0.71.0" />
       </TomcatInfo>
     </option>

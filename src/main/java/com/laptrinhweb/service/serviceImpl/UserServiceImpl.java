@@ -19,7 +19,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserEntity> getAll() {
-        redisService.setValue("users",repo.findAll());
+        if(!redisService.hasKey("users")){
+            redisService.setValue("users",repo.findAll());
+        }
         List<UserEntity> list = (List<UserEntity>) redisService.getValue("users");
         return list;
     }

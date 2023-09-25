@@ -9,6 +9,7 @@ public class HomeControllerImpl extends BaseHomeController implements HomeContro
     @Override
     public ModelAndView home() {
         modelAndView.setViewName("/guest/home");
+
         return modelAndView;
     }
 }

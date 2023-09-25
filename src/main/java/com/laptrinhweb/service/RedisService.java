@@ -8,4 +8,6 @@ public interface RedisService {
 
     public Object getValue(String key);
 
+    public boolean hasKey(String key);
+
 }

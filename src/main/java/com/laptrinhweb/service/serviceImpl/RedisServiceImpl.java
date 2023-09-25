@@ -22,4 +22,12 @@ public class RedisServiceImpl implements RedisService {
     public Object getValue(String key) {
         return template.opsForValue().get(key);
     }
+
+    @Override
+    public boolean hasKey(String key) {
+        if(template.hasKey(key))
+            return true;
+        else
+            return false;
+    }
 }

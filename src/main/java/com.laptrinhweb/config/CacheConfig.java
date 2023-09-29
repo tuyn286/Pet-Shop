@@ -1,6 +1,8 @@
 package com.laptrinhweb.config;
 
-public class CacheConfig{// implements ServletContextListener {
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
+public class CacheConfig{// implements ServletContextListener {
 
 }

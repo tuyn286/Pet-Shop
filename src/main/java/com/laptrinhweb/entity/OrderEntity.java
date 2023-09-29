@@ -14,7 +14,7 @@ import java.util.Date;
 public class OrderEntity {
     @Id
     @GeneratedValue
-    private int orderId;
+    private Integer orderId;
     private Date orderDate;
     private int orderNumber;
     @ManyToOne

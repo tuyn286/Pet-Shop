@@ -2,6 +2,7 @@ package com.laptrinhweb.config;
 
 import com.laptrinhweb.repository.UserRepo;
 import com.laptrinhweb.security.CustomUserDetails;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.ui.ModelMap;
 
 @Configuration
 public class ApplicationConfig {
@@ -38,4 +40,10 @@ public class ApplicationConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception{
         return configuration.getAuthenticationManager();
     }
+
+    @Bean
+    public ModelMapper modelMapper(){
+        return  new ModelMapper();
+    }
+
 }

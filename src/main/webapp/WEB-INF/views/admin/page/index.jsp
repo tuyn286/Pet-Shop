@@ -57,10 +57,14 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
-                            <a class="nav-link" href="<c:url value='/admin/table'/>">
+                            <a class="nav-link" href="<c:url value='/admin/tables'/>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            <a class="nav-link" href="<c:url value='/admin/products'/>">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Add Product
+                        </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

@@ -2,16 +2,17 @@ package com.laptrinhweb.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Getter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductEntity {
     @Id
-    @GeneratedValue
     private int productId;
     private String productName;
     private String description;
@@ -21,34 +22,6 @@ public class ProductEntity {
     @JoinColumn(name = "categoryId")
     private CategoryEntity categoryEntity;
     private int quantity;
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public CategoryEntity getCategoryEntity() {
-        return categoryEntity;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
 
     public void setProductId(int productId) {
         this.productId = productId;

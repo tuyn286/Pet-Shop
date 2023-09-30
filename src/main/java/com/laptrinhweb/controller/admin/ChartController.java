@@ -13,4 +13,5 @@ public class ChartController {
         modelAndView.setViewName("/admin/page/charts");
         return modelAndView;
     }
+
 }

@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
 public class ApplicationConfig {
@@ -44,6 +45,12 @@ public class ApplicationConfig {
     @Bean
     public ModelMapper modelMapper(){
         return  new ModelMapper();
+    }
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(10 * 1024 * 1024); // Set max upload size in bytes (e.g., 10MB)
+        return multipartResolver;
     }
 
 }

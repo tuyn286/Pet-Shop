@@ -20,5 +20,6 @@ public class ProductDto {
     private Double price;
     private String image;
     private String categoryEntityCategoryName;
+    private String categoryEntityCategoryId;
     private int quantity;
 }

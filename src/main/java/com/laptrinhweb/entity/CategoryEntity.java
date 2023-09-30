@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class CategoryEntity {
     @Id
     @GeneratedValue
-    private int categoryId;
+    private Integer categoryId;
     private String categoryName;
     private String description;
 }

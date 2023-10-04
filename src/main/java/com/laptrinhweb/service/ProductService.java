@@ -14,4 +14,6 @@ public interface ProductService {
     public List<ProductDto> getProducts();
 
     void create(ProductDto productDto, MultipartFile file, HttpServletRequest request);
+
+    void deleteById(int id);
 }

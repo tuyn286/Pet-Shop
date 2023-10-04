@@ -30,4 +30,9 @@ public class RedisServiceImpl implements RedisService {
         else
             return false;
     }
+
+    @Override
+    public void removeKey(String key) {
+        template.delete(key);
+    }
 }

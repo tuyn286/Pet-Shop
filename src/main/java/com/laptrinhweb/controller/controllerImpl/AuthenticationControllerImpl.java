@@ -6,6 +6,7 @@ import com.laptrinhweb.entity.UserEntity;
 import com.laptrinhweb.repository.UserRepo;
 import com.laptrinhweb.service.AuthenticationService;
 import com.laptrinhweb.Dto.auth.AuthenticationRequest;
+import com.laptrinhweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,38 +23,40 @@ public class AuthenticationControllerImpl extends BaseHomeController implements 
     private AuthenticationService authenticationService;
 
     @Autowired
-    UserRepo userRepo;
-
-    @Autowired
-    RedisTemplate template;
-    @Override
-    public ModelAndView welcomePage() {
-        modelAndView.setViewName("/admin/welcome");
-        return modelAndView;
-    }
+    UserService userService;
     @Override
     public ModelAndView showLogin() {
         modelAndView.addObject("authenticationRequest",new AuthenticationRequest());
-        modelAndView.setViewName("/login-page");
+        modelAndView.setViewName("/admin/page/login");
         return modelAndView;
     }
     @Override
     public ModelAndView loginSuccess(AuthenticationRequest authenticationRequest, HttpServletResponse response){
-        //Redirect home page
-        modelAndView.setView(new RedirectView("/api/v1/auth"));
+        try {
+            //Authentication
+            AuthenticationResponse authenticationResponse = authenticationService.authenticate(authenticationRequest);
+            System.out.print(authenticationResponse);
 
-        //Authentication
-        AuthenticationResponse authenticationResponse = authenticationService.authenticate(authenticationRequest);
-        System.out.print(authenticationResponse);
+            // Create a new HTTP-only cookie containing the JWT
+            Cookie jwtCookie = new Cookie("jwtCookie", "Bearer"+authenticationResponse.getToken());
+            jwtCookie.setHttpOnly(true);
+            jwtCookie.setMaxAge(60*60);
+            jwtCookie.setPath("/"); // Set the cookie path as needed
 
-        // Create a new HTTP-only cookie containing the JWT
-        Cookie jwtCookie = new Cookie("jwtCookie", "Bearer"+authenticationResponse.getToken());
-        jwtCookie.setHttpOnly(true);
-        jwtCookie.setMaxAge(60);
-        jwtCookie.setPath("/"); // Set the cookie path as needed
+            // Add the cookie to the response
+            response.addCookie(jwtCookie);
 
-        // Add the cookie to the response
-        response.addCookie(jwtCookie);
+            //Redirect home page
+            if(authenticationRequest.getEmail().contains("admin")){
+                modelAndView.setView(new RedirectView("/admin"));
+            }else {
+                modelAndView.setView(new RedirectView("/home"));
+            }
+        } catch (Exception ex){
+            System.out.print(ex);
+            modelAndView.setView(new RedirectView("/home"));
+        }
+
         return modelAndView;
     }
 }

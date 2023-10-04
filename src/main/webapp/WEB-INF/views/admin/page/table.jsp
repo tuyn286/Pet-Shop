@@ -97,6 +97,7 @@
                                             <th>Price</th>
                                             <th>Quantity</th>
                                             <th>Category</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -106,6 +107,7 @@
                                             <th>Price</th>
                                             <th>Quantity</th>
                                             <th>Category</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -116,6 +118,9 @@
                                                 <td>${item.price}</td>
                                                 <td>${item.quantity}</td>
                                                 <td>${item.categoryEntityCategoryName}</td>
+                                                <td style="align-items: center;">
+                                                    <a href="<c:url value='/admin/products/delete/${item.productId}'/>" style="display: block;text-align: center;">Delete</a>
+                                                </td>
                                             </tr>
                                         </c:forEach>
                                   </tbody>

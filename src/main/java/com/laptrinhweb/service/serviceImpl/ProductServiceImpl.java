@@ -40,7 +40,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getProducts() {
-        return repo.findAll().stream().map(productEntity -> modelMapper.map(productEntity, ProductDto.class)).toList();
+        if(!redisService.hasKey("products")){
+            redisService.setValue("products",repo.findAll());
+        }
+        List<ProductEntity> list = (List<ProductEntity>) redisService.getValue("products");
+        return list.stream().map(productEntity -> modelMapper.map(productEntity, ProductDto.class)).toList();
     }
 
     @Override
@@ -55,6 +59,13 @@ public class ProductServiceImpl implements ProductService {
         int randomInt = (int) (randomNumber * (max - min + 1)) + min;
         productEntity.setProductId(randomInt);
         repo.save(productEntity);
+        redisService.removeKey("products");
+    }
+
+    @Override
+    public void deleteById(int id) {
+        repo.deleteById(id);
+        redisService.removeKey("products");
     }
 
     private String saveImg(MultipartFile file, HttpServletRequest request){

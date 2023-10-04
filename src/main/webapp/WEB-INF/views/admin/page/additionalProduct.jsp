@@ -68,7 +68,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    Admin
                 </div>
             </nav>
         </div>
@@ -78,7 +78,7 @@
                     <div class="container tm-mt-big tm-mb-big">
                         <div class="row">
                           <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
-                            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                            <div class="tm-bg-primary-dark tm-block tm-block-h-auto" style="margin-top: 50px;">
                               <div class="row">
                                 <div class="col-12">
                                   <h2 class="tm-block-title d-inline-block">Add Product</h2>

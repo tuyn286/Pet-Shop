@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +10,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Login - SB Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="<c:url value='/assets/css/styles.css' />" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -20,13 +23,13 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form:form action="/auth/login" method="POST" modelAttribute="authenticationRequest">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <form:input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" path="email"/>
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                <form:input class="form-control" id="inputPassword" type="password" placeholder="Password" path="password"/>
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
@@ -35,9 +38,9 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.jsp">Login</a>
+                                                <button type="submit" class="btn btn-primary">Login</button>
                                             </div>
-                                        </form>
+                                        </form:form>
                                     </div>
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="register.html">Need an account? Sign up!</a></div>

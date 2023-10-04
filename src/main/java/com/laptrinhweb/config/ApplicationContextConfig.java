@@ -81,4 +81,23 @@ public class ApplicationContextConfig {
         transactionManager.setEntityManagerFactory(emf);
         return transactionManager;
     }
+
+    @Bean
+    public JavaMailSenderImpl getJavaMailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost("smtp.gmail.com");
+        mailSender.setPort(587);
+        mailSender.setUsername(env.getProperty("spring.mail.username"));
+        mailSender.setPassword(env.getProperty("spring.mail.password"));
+        Properties props = mailSender.getJavaMailProperties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+        props.put("mail.debug", "true");
+        props.setProperty("mail.smtp.ssl.protocols", "TLSv1.1 TLSv1.2");
+        props.setProperty("mail.smtp.timeout",env.getProperty("spring.mail.properties.mail.smtp.timeout"));
+        return mailSender;
+    }
 }

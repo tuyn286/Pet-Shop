@@ -68,6 +68,7 @@
                                     <a href="<c:url value='/testimonial'/>" class="dropdown-item">Testimonial</a>
                                     <a href="<c:url value='/blog'/>" class="dropdown-item">Blog Grid</a>
                                     <a href="<c:url value='/blog-detail'/>" class="dropdown-item">Blog Detail</a>
+                                    <a href="<c:url value='/auth/login-page'/>" class="dropdown-item">Admin</a>
                                 </div>
                             </div>
                             <a href="<c:url value='/contact'/>"

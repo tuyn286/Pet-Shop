@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @RequestMapping("/auth")
     public interface AuthenticationController {
-    @RequestMapping({"/",""})
-    public ModelAndView welcomePage();
     @RequestMapping("/login-page")
     public ModelAndView showLogin();
     @PostMapping("/login")

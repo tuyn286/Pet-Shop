@@ -61,7 +61,7 @@
                             <a href="<c:url value='/service'/>" class="nav-item nav-link ">Service</a>
                             <a href="<c:url value='/product'/>" class="nav-item nav-link ">Product</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu m-0">
                                     <a href="<c:url value='/price'/>" class="dropdown-item">Pricing Plan</a>
                                     <a href="<c:url value='/team'/>" class="dropdown-item">The Team</a>
@@ -88,30 +88,30 @@
                         </div>
                         <div class="row g-5">
                             <div class="col-lg-7">
-                                <form>
+                                <form:form action="/contact/send-message" method="POST" modelAttribute="messageDto">
                                     <div class="row g-3">
                                         <div class="col-12">
-                                            <input type="text" class="form-control bg-light border-0 px-4"
-                                                placeholder="Your Name" style="height: 55px;">
+                                            <form:input type="text" id="inputName" path="name" class="form-control bg-light border-0 px-4"
+                                                placeholder="Your Name" style="height: 55px;"/>
                                         </div>
                                         <div class="col-12">
-                                            <input type="email" class="form-control bg-light border-0 px-4"
-                                                placeholder="Your Email" style="height: 55px;">
+                                            <form:input type="email" id="inputEmail" path="email" class="form-control bg-light border-0 px-4"
+                                                placeholder="Your Email" style="height: 55px;"/>
                                         </div>
                                         <div class="col-12">
-                                            <input type="text" class="form-control bg-light border-0 px-4"
-                                                placeholder="Subject" style="height: 55px;">
+                                            <form:input type="text" id="inputSubject" path="subject" class="form-control bg-light border-0 px-4"
+                                                placeholder="Subject" style="height: 55px;"/>
                                         </div>
                                         <div class="col-12">
-                                            <textarea class="form-control bg-light border-0 px-4 py-3" rows="8"
-                                                placeholder="Message"></textarea>
+                                            <form:input path="message" id="inputMessage" class="form-control bg-light border-0 px-4 py-3" rows="8"
+                                                placeholder="Message"/>
                                         </div>
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100 py-3" type="submit">Send
                                                 Message</button>
                                         </div>
                                     </div>
-                                </form>
+                                </form:form>
                             </div>
                             <div class="col-lg-5">
                                 <div class="bg-light mb-5 p-5">

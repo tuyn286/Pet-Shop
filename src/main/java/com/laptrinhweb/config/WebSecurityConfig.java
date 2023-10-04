@@ -28,7 +28,7 @@ public class WebSecurityConfig{
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(STATELESS);
         http.authorizeRequests()
-                .antMatchers("/admin/**").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
                 .anyRequest().permitAll()
                 .and()
